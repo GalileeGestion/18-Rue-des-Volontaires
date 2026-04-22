@@ -33,7 +33,7 @@
         img, svg { max-width: 100%; height: auto; }
         .container { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
 
-        header { background: var(--surface); border-bottom: 1px solid var(--border); height: 80px; display: flex; align-items: center; }
+        header { background: var(--surface); border-bottom: 1px solid var(--border); min-height: 80px; display: flex; align-items: center; padding: 10px 0; }
         .header-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; width: 100%; }
         .logo { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 24px; letter-spacing: -1px; color: var(--primary); text-decoration: none; }
         .logo svg { width: 24px; height: 24px; fill: var(--primary); }
@@ -107,19 +107,23 @@
 
         @media (max-width: 900px) {
             .hero-layout { grid-template-columns: 1fr; gap: 40px; }
-            .hero-text.container { text-align: left; }
-            .price-card { margin: 0; max-width: 100%; }
+            .hero-text { text-align: center; }
+            .price-card { margin: 0 auto; max-width: 100%; text-align: center; }
             .criteria-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-            .agent-box { flex-direction: column; text-align: center; align-items: center; gap: 20px; padding: 30px; }
+            .agent-box { flex-direction: column; text-align: center; align-items: center; gap: 20px; padding: 40px 30px; }
             .agent-content { align-items: center; text-align: center; }
+            .agent-box > div { flex-direction: column !important; text-align: center; }
             .download-box { padding: 30px 20px; }
         }
         @media (max-width: 600px) {
+            .container { padding: 0 24px; }
             .header-inner { flex-direction: column; text-align: center; gap: 16px; padding: 15px 0; height: auto; }
             .contact-info { flex-direction: column; gap: 8px; align-items: center; }
+            .hero-text { text-align: center; }
+            .price-card { text-align: center; }
             .agent-box { padding: 32px 20px; }
             .btn { width: 100%; padding: 16px 24px; font-size: 14px; }
-            .price-value { font-size: 64px; letter-spacing: -2px; }
+            .price-value { font-size: 56px; letter-spacing: -2px; }
             .download-box p { font-size: 16px; }
         }
     </style>
